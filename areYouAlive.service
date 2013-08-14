@@ -1,0 +1,11 @@
+[Unit]
+Description=Ping through NAT Service
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/areYouAlive -s -l
+
+[Install]
+WantedBy=multi-user.target
