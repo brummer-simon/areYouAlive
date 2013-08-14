@@ -59,7 +59,7 @@ int main(int argc, char** argv){
 	hints.ai_flags = AI_PASSIVE;
 
 	if( getaddrinfo(node, port, &hints, &pRes) != 0){
-		die("Can't Resolv specified Hostname");
+		die("Can't Resolv specified Hostname\n");
 	}
 
 	for( ptr = pRes; ptr != NULL; ptr = ptr->ai_next){
@@ -78,7 +78,7 @@ int main(int argc, char** argv){
 	/* Clean Resolver Structures */
 	cleanup:
 	if( ptr == NULL){
-		die("Can't Establish Connection");
+		die("Can't Establish Connection\n");
 	}
 	freeaddrinfo(pRes);
 
